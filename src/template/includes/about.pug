@@ -1,0 +1,21 @@
+section#about.about-section
+  h1 !{sections.about.title}
+  if (sections.about.img) 
+    img(src=sections.about.img)
+  
+  if (typeof sections.about.paragraphs !== "string" ) 
+    each paragraph in sections.about.paragraphs
+        p !{paragraph}
+  else 
+    p !{sections.about.paragraphs}
+
+  each item, index in sections.about.items
+    ul
+      li
+        span !{index}: !{item}
+  if (sections.about.socialLinks) 
+    .social-links
+      each item in sections.about.socialLinks
+        a(href=item.link)
+          img(src=item.icon) 
+          span !{item.text}

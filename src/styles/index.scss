@@ -1,0 +1,49 @@
+$mainColor: #444;
+
+@mixin gradientText($direction, $color1, $color2) {
+  background: -webkit-linear-gradient($direction, $color1, $color2);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+body {
+  color: white;
+  background: -webkit-linear-gradient(45deg, #2c65eb, #57b5b1);
+  > h1, > p {
+    text-align: center;
+  }
+}
+
+nav {
+  text-align: center;
+  a {margin: 0 5px}
+}
+
+footer {
+  text-align: center;
+  opacity: .8;
+  padding: 30px 0;
+}
+
+section {
+  //width: 850px;
+  //max-width: 90%;
+  margin: 50px auto 100px;
+  padding: 50px;
+  box-shadow: border-box;
+ // &:nth-child(odd) {
+    background: #fff;
+    color: $mainColor;
+    box-shadow: 0px 5px 10px -5px;
+    h1 {
+      @include gradientText(45deg, #2c65eb, #57b5b1);
+    }
+ // }
+  /*&:nth-child(even) {
+    color: white;
+    
+  }*/
+  h1 {
+    text-align: center;
+  }
+}

@@ -1,0 +1,15 @@
+section#portfolio.portfolio-section
+  h1 !{sections.portfolio.title}
+  if (typeof sections.portfolio.description !== "string" ) 
+    each paragraph in sections.portfolio.description
+        p !{paragraph}
+  else 
+    p !{sections.portfolio.description}
+
+  each item in sections.portfolio.items
+    div
+      a(href=item.href alt="Go to " + item.title)
+        img(src=item.imgSrc)
+        h3 !{item.title}
+        p !{item.description}
+        

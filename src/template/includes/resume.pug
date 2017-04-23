@@ -1,0 +1,39 @@
+section#resume.resume-section
+  h1 !{sections.resume.title}
+
+
+  .general
+    h3 !{sections.resume.general.title}
+    ul
+    each item, index in sections.resume.general.items
+        li !{index}: !{item}
+
+
+  .projects
+    h3 !{sections.resume.projects.title}
+    each item in sections.resume.projects.items
+        .one-project
+          h4 !{item.title} 
+          p !{item.description}
+
+  .education
+    h3 !{sections.resume.education.title}
+    each item in sections.resume.education.items
+        .one-education 
+          h4 !{item.school} 
+          span
+            strong !{item.program} 
+          span
+            i !{item.from} - !{item.to}  
+          p !{item.description} 
+
+  .work
+    h3 !{sections.resume.education.title}
+    each item in sections.resume.work.items
+        .one-work 
+          h4 !{item.title} 
+          span
+            strong !{item.employer} 
+          span
+            i !{item.from} - !{item.to}  
+          p !{item.description} 
